@@ -1,0 +1,16 @@
+services:
+  # PostgreSQL Database
+  postgres:
+    image: postgres:14
+    container_name: match-analytics-db
+    environment:
+      POSTGRES_DB: match_analytics
+      POSTGRES_USER: backend
+      POSTGRES_PASSWORD: E8C7D%j9@#G5Z!2u8q&1E8kLx9m^Wb7S
+    ports:
+      - "5432:5432"
+    restart: unless-stopped
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - match-analytics-network
