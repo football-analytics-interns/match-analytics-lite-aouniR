@@ -6,6 +6,7 @@ import jakarta.persistence.*;
 @Entity
 @Table(name = "player")
 @AllArgsConstructor
+@NoArgsConstructor
 @Getter
 @Setter
 public class Player {
