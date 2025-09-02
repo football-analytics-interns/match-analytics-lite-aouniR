@@ -5,7 +5,7 @@ import com.example.match_analytics_lite.converter.JsonNodeConverter;
 import com.fasterxml.jackson.databind.JsonNode;
 
 import jakarta.persistence.*;
-
+@Builder
 @Entity
 @Table(name = "events")
 @AllArgsConstructor
