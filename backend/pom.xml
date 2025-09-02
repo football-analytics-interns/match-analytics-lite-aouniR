@@ -45,6 +45,7 @@
 		<dependency>
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
+			<version>42.7.3</version>
 			<scope>runtime</scope>
 		</dependency>
 		<dependency>
@@ -95,6 +96,29 @@
 					</excludes>
 				</configuration>
 			</plugin>
+			<plugin>
+                <groupId>org.flywaydb</groupId>
+                <artifactId>flyway-maven-plugin</artifactId>
+                <configuration>
+                    <url>${spring.flyway.url}</url>
+                    <user>${spring.flyway.user}</user>
+                    <password>${spring.flyway.password}</password>
+             	<schemas>
+					<schema>public</schema>
+				</schemas>
+				<locations>
+					<location>classpath:db/migration</location>
+				</locations>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>migrate</goal>
+                        </goals>
+                        <phase>none</phase>
+                    </execution>
+                </executions>
+            </plugin>
 		</plugins>
 	</build>
 
