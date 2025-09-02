@@ -14,3 +14,11 @@ services:
       - postgres_data:/var/lib/postgresql/data
     networks:
       - match-analytics-network
+      
+volumes:
+  postgres_data:
+    driver: local
+
+networks:
+  match-analytics-network:
+    driver: bridge
